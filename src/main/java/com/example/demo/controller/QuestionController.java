@@ -80,7 +80,7 @@ public class QuestionController {
 
 
     //🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢( POST )🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
-    @PostMapping
+    @PostMapping("new")
     public ResponseEntity<Question> createQuestion(@RequestBody Question question) {
         logger.info("Creating new question...");
         Question createdQuestion = questionService.createQuestion(question);
