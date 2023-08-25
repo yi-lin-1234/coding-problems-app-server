@@ -31,7 +31,7 @@ public class QuestionController {
 
 
     //🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵( GET )🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵
-    @GetMapping("/all-questions")
+    @GetMapping("all-questions")
     public ResponseEntity<List<Question>> getAllQuestions() {
         logger.info("Fetching all questions...");
         List<Question> questions = questionService.getAllQuestions();
@@ -51,7 +51,7 @@ public class QuestionController {
         }
     }
 
-    @GetMapping("/search")
+    @GetMapping("search")
     public ResponseEntity<List<Question>> searchQuestionsByName(@RequestParam String name) {
         logger.info("Searching questions by name: {}", name);
         List<Question> questions = questionService.searchQuestionsByName(name);
@@ -62,7 +62,7 @@ public class QuestionController {
         return ResponseEntity.ok(questions);
     }
 
-    @GetMapping("/count-by-topic")
+    @GetMapping("count-by-topic")
     public ResponseEntity<List<TopicCount>> countQuestionsByTopic() {
         logger.info("Counting questions by topic...");
         List<TopicCount> topicCounts = questionService.countQuestionsByTopic();
@@ -70,7 +70,7 @@ public class QuestionController {
         return ResponseEntity.ok(topicCounts);
     }
 
-    @GetMapping("/count-by-difficulty")
+    @GetMapping("count-by-difficulty")
     public ResponseEntity<List<DifficultyCount>> countQuestionsByDifficulty() {
         logger.info("Counting questions by difficulty...");
         List<DifficultyCount> difficultyCounts = questionService.countQuestionsByDifficulty();
@@ -92,7 +92,7 @@ public class QuestionController {
 
     //🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡( Put )🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡
 
-    @PutMapping("/question/{id}")
+    @PutMapping("question/{id}")
     public ResponseEntity<Question> updateQuestion(@PathVariable UUID id, @RequestBody Question updatedQuestion) {
         logger.info("Updating question with ID: {}", id);
         try {
@@ -107,7 +107,7 @@ public class QuestionController {
 
 
     //🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴( DELETE )🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
-    @DeleteMapping("/question/{id}")
+    @DeleteMapping("question/{id}")
     public ResponseEntity<Void> deleteQuestion(@PathVariable UUID id) {
         logger.info("Deleting question with ID: {}", id);
         questionService.deleteQuestionById(id);
