@@ -17,8 +17,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-//@CrossOrigin(origins = "https://unrivaled-paprenjak-c9ce77.netlify.app/")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://unrivaled-paprenjak-c9ce77.netlify.app")
 public class QuestionController {
 
     private static final Logger logger = LoggerFactory.getLogger(QuestionController.class);
