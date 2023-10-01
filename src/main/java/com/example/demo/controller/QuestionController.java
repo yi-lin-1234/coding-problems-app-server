@@ -78,6 +78,11 @@ public class QuestionController {
         return ResponseEntity.ok(difficultyCounts);
     }
 
+    @GetMapping("/total-count")
+    public long getTotalNumberOfQuestions() {
+        return questionService.getTotalNumberOfQuestions();
+    }
+
 
     //🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢( POST )🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
     @PostMapping("new")

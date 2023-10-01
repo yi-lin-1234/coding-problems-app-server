@@ -46,6 +46,9 @@ public class QuestionService {
     public List<DifficultyCount> countQuestionsByDifficulty() {
         return questionRepository.countQuestionsByDifficulty();
     }
+    public long getTotalNumberOfQuestions() {
+        return questionRepository.count();
+    }
 
 
     //🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡( Put )🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡
